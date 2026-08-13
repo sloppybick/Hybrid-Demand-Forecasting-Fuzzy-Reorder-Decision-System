@@ -1,0 +1,20 @@
+# Reference values only — the actual membership functions live in
+# src/fuzzy/membership.py (skfuzzy objects aren't cleanly YAML-serializable).
+# This file documents the design so it can be tuned without reading code.
+
+service_level_default: 0.95
+
+decision_thresholds:
+  do_not_reorder: [0, 20]
+  monitor: [20, 40]
+  reorder_soon: [40, 60]
+  reorder_now: [60, 80]
+  urgent_reorder: [80, 100]
+
+fuzzy_should_order_threshold: 40  # urgency score at/above which an order qty is computed
+
+normalized_input_universes:
+  stock_ratio: [0, 3]        # current_stock / lead_time_demand
+  demand_ratio: [0, 3]       # forecast_horizon_demand / historical_avg_demand_over_horizon
+  uncertainty: [0, 1.5]      # (forecast_upper - forecast_lower) / forecast
+  lead_time_days: [0, 30]

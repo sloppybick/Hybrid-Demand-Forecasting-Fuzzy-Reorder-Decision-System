@@ -1,0 +1,6 @@
+sku,current_stock,lead_time,minimum_order_quantity,unit_cost
+SKU-001,150,7,50,4.2
+SKU-002,40,5,20,12.5
+SKU-003,200,10,100,2.1
+SKU-004,15,14,10,35.0
+SKU-005,500,6,60,6.8

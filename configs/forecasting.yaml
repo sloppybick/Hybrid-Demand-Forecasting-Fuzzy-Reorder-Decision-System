@@ -1,0 +1,12 @@
+prophet:
+  weekly_seasonality: true
+  yearly_seasonality: auto
+  daily_seasonality: false
+  interval_width: 0.8
+
+default_horizon_days: 14
+
+backtest:
+  n_folds: 3
+  horizon_days: 7
+  min_train_size: 60
