@@ -37,13 +37,13 @@ g = cleaned[cleaned.sku == sku].sort_values("date")
 g_roll = rolling_features(g, window=7)
 
 st.subheader(f"Historical Demand — {sku}")
-fig = px.line(g_roll, x="date", y=["quantity", "rolling_mean_7d"], labels={"value": "units", "variable": ""})
+fig = px.line(g_roll, x="date", y=["quantity", "rolling_mean_7d"], labels={"value": "units", "variable": ""}, render_mode="svg")
 st.plotly_chart(fig, use_container_width=True)
 
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("Rolling Volatility (7-day std)")
-    fig2 = px.line(g_roll, x="date", y="rolling_std_7d")
+    fig2 = px.line(g_roll, x="date", y="rolling_std_7d", render_mode="svg")
     st.plotly_chart(fig2, use_container_width=True)
 
 with col2:
